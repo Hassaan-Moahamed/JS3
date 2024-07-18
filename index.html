@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+  <div class="container w-75 mx-auto py-5 mt-3">
+    <h1 class="text-center py-2 position-relative">Bookmarker</h1>
+    <h2 class="text-center py-5">
+        <i class="fa-solid fa-bookmark"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+    </h2>
+    <div class="mb-3 text-start">
+        <label for="siteNmae" class="form-labe fw-bolder"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+        <input  oninput="validate(this)" type="text" class="form-control " id="siteNmae" placeholder="Bookmark Name">
+    </div>
+    <div class="mb-3 text-start">
+        <label for="bookMarkURL" class="form-label fw-bolder"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+        <input oninput="validate1(this)"  type="url" class="form-control" id="bookMarkURL" placeholder="Website URL">
+    </div>
+    <div class=""></div>
+    <div class="text-center">
+        <button onclick="addSite()" class="btn btn-danger px-5">Submit</button>
+    </div>
+    <table class="table my-5 p-3 text-center">
+      <thead>
+        <tr class="">
+          <th scope="col">Index</th>
+          <th scope="col">Website Name</th>
+          <th scope="col">Visit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="sites">
+        
+      </tbody>
+    </table>
+</div>
+<div class="warn-container top-0 bottom-0 start-0 end-0 position-fixed d-none justify-content-center align-items-center" id="warnin">
+  <div class="warn-text  ">
+    <header class="m-4" >
+      <div class="circles d-flex">
+        <span class="rounded-circle me-2"></span>
+        <span class="rounded-circle me-2"></span>
+        <span class="rounded-circle me-2"></span>
+      </div>
+    </header>
+    <button class="btn border-0 m-2" onclick="close()" id="closeBtn">
+      <i class="fa-solid fa-xmark close fs-3"></i>
+    </button>
+    <div class="container mx-auto">
+      <p class="ps-2">Site Name or Url is not valid, Please follow the rules below :</p>
+      <ol class="rules list-unstyled m-0">
+        <li>
+          <i class="fa-regular fa-circle-right p-2"></i>Site name must
+          contain at least 3 characters
+        </li>
+        <li>
+          <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+          valid one
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
